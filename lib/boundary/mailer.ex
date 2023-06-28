@@ -1,3 +1,8 @@
 defmodule Boundary.Mailer do
-  use Swoosh.Mailer, otp_app: :boundary
+  alias Boundary.User
+
+  def send_billing_reminder(%User{} = user) do
+    # ...
+    {:ok, :sent}
+  end
 end
