@@ -17,7 +17,7 @@ defmodule Boundary.User.PureTest do
     refute Pure.should_send_billing_reminder?(%User{user | active: false}, now)
 
     refute Pure.should_send_billing_reminder?(
-             %User{user | paid_at: ~U[2021-01-10T00:00:00+00]},
+             %User{user | paid_at: ~U[2021-01-20T00:00:00+00]},
              now
            )
   end
