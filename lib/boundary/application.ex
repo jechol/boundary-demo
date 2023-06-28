@@ -9,15 +9,15 @@ defmodule Boundary.Application do
   def start(_type, _args) do
     children = [
       # Start the Telemetry supervisor
-      BoundaryWeb.Telemetry,
+      # BoundaryWeb.Telemetry,
       # Start the Ecto repository
-      Boundary.Repo,
+      Boundary.Repo
       # Start the PubSub system
-      {Phoenix.PubSub, name: Boundary.PubSub},
+      # {Phoenix.PubSub, name: Boundary.PubSub},
       # Start Finch
-      {Finch, name: Boundary.Finch},
+      # {Finch, name: Boundary.Finch}
       # Start the Endpoint (http/https)
-      BoundaryWeb.Endpoint
+      # BoundaryWeb.Endpoint
       # Start a worker by calling: Boundary.Worker.start_link(arg)
       # {Boundary.Worker, arg}
     ]
@@ -30,9 +30,9 @@ defmodule Boundary.Application do
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
-  @impl true
-  def config_change(changed, _new, removed) do
-    BoundaryWeb.Endpoint.config_change(changed, removed)
-    :ok
-  end
+  # @impl true
+  # def config_change(changed, _new, removed) do
+  #   BoundaryWeb.Endpoint.config_change(changed, removed)
+  #   :ok
+  # end
 end
