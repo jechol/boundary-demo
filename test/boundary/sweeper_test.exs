@@ -14,10 +14,10 @@ defmodule Boundary.SweeperTest do
       )
 
       with_mock Mailer,
-        send_billing_reminder: fn _user -> send(self(), :sent) end do
+        send_billing_reminder: fn _user -> send(self(), :send_billing_reminder) end do
         Sweeper.sweep()
 
-        refute_receive :sent
+        refute_receive :send_billing_reminder
       end
     end
 
@@ -28,10 +28,10 @@ defmodule Boundary.SweeperTest do
       )
 
       with_mock Mailer,
-        send_billing_reminder: fn _user -> send(self(), :sent) end do
+        send_billing_reminder: fn _user -> send(self(), :send_billing_reminder) end do
         Sweeper.sweep()
 
-        assert_receive :sent
+        assert_receive :send_billing_reminder
       end
     end
 
@@ -42,10 +42,10 @@ defmodule Boundary.SweeperTest do
       )
 
       with_mock Mailer,
-        send_billing_reminder: fn _user -> send(self(), :sent) end do
+        send_billing_reminder: fn _user -> send(self(), :send_billing_reminder) end do
         Sweeper.sweep()
 
-        refute_receive :sent
+        refute_receive :send_billing_reminder
       end
     end
   end
